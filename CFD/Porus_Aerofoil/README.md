@@ -28,9 +28,5 @@ Pressure Contour
 ![Re vs Cl Plot](post_process/images/pressure.png)
 
 
----
-
-## Methodology
-
 
 
