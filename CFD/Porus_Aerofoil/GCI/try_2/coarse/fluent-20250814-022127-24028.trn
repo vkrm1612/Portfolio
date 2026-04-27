@@ -1,0 +1,144 @@
+Auto-Transcript Start Time:  02:21:27, 14 Aug 2025 GMT Summer Time 
+Current Directory: "C:\Users\V.Chepuri\OneDrive - Cranfield University\irp\pablo\GCI\try_2\coarse"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@cclic-2.central.cranfield.ac.uk
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is an academic version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "37PCL050" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    Vendor                          
+-------------------------------------------------------------------------------
+n0    37PCL050  1/28  Windows-x64  23936  Intel(R) Core(TM) i7-14700      
+host  37PCL050        Windows-x64  24304  Intel(R) Core(TM) i7-14700      
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is C:\\Users\\V.Chepuri\\OneDrive - Cranfield University\\irp\\pablo\\GCI\\try_2\\coarse\\cleanup-fluent-37PCL050-24304.bat
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+
+> (cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Mesh...")
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Case...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "template_medium.cas.h5") "CFF Case Files (*.cas.h5 *.msh.h5 *.MSH.h5 )")
+Fast-loading "C:\PROGRA~1\ANSYSI~1\v242\fluent\fluent24.2.0\\addons\afd\lib\hdfio.bin"
+Done.
+Note: Rank = 0: Process affinity not being set (6).
+
+Reading from 37PCL050:"C:/Users/V.Chepuri/OneDrive - Cranfield University/irp/pablo/GCI/try_2/coarse/template_medium.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      142418 cells,     3 cell zones ...
+           9206 mixed cells,  zone id: 2
+         106661 mixed cells,  zone id: 4
+          26551 mixed cells,  zone id: 12
+      240367 faces,    11 face zones ...
+          16170 2D interior faces,  zone id: 3
+         178860 2D interior faces,  zone id: 5
+             42 2D velocity-inlet faces,  zone id: 6
+             38 2D pressure-outlet faces,  zone id: 7
+             40 2D velocity-inlet faces,  zone id: 8
+            229 2D interior faces,  zone id: 9
+            228 2D interior faces,  zone id: 10
+             20 2D parent-face faces,  zone id: 17
+             19 2D parent-face faces,  zone id: 16
+             21 2D parent-face faces,  zone id: 15
+          44700 2D parent-face faces,  zone id: 14
+       79741 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	outlet
+	inlet
+	interior-fluid
+	interior-porous
+	symmetry
+	upper
+	lower
+	fluid
+	porous
+WARNING: "Smooth" contours can't be displayed when node-values is set to off. Changing the Coloring type to "Banded".
+     parallel,
+Done.
+(cx-gui-do cx-activate-item "ToolBar*Mesh Display*fl_mesh_svg_graphics_toolbar")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera -0.0184171 0.170813 0)
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(dolly-camera -0.23225 1.52968 0)
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton1(Manual)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_1" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton4(Display)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton4(Display)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 115867 cells, 195607 faces, 79741 nodes
+
+ Dump usage: 435850 cells, 732884 faces, 297035 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   115867 /    435850 /    319983)
+     faces (   195607 /    732884 /    537277)
+     nodes (    79741 /    297035 /    217294)
+
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+
+(cx-gui-do cx-activate-item "Information*OK")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton2(Close)")
+(cx-gui-do cx-activate-item "MenuBar*WriteSubMenu*Case...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "C:/Users/V.Chepuri/OneDrive - Cranfield University/irp/pablo/GCI/try_2/dense/template_medium.cas.h5") "CFF Case Files (*.cas.h5 )")
+
+Writing to 37PCL050:"C:/Users/V.Chepuri/OneDrive - Cranfield University/irp/pablo/GCI/try_2/dense/template_medium.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+      569062 cells,     3 zones ...
+      957081 faces,    13 zones ...
+      297035 nodes,     1 zone  ...
+  Done.
+Done.
+(cx-gui-do cx-activate-item "ToolBar*Mesh Display*fl_mesh_svg_graphics_toolbar")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+/exit y
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  02:24:41, 14 Aug 2025 GMT Summer Time 
+Total Transcript Time: 3 Minute 14 Second.

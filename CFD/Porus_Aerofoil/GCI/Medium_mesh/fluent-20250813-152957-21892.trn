@@ -1,0 +1,419 @@
+Auto-Transcript Start Time:  15:29:57, 13 Aug 2025 GMT Summer Time 
+Current Directory: "C:\Users\V.Chepuri\OneDrive - Cranfield University\irp\pablo\GCI\Medium_mesh"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@cclic-2.central.cranfield.ac.uk
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is an academic version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "37PCL050" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID   Vendor                          
+-------------------------------------------------------------------------------
+n0    37PCL050  1/28  Windows-x64  3356  Intel(R) Core(TM) i7-14700      
+host  37PCL050        Windows-x64  8668  Intel(R) Core(TM) i7-14700      
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is C:\\Users\\V.Chepuri\\OneDrive - Cranfield University\\irp\\pablo\\GCI\\Medium_mesh\\cleanup-fluent-37PCL050-8668.bat
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+
+> (cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Case...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "template_medium.cas.h5") "CFF Case Files (*.cas.h5 *.msh.h5 *.MSH.h5 )")
+Fast-loading "C:\PROGRA~1\ANSYSI~1\v242\fluent\fluent24.2.0\\addons\afd\lib\hdfio.bin"
+Done.
+Note: Rank = 0: Process affinity not being set (6).
+
+Reading from 37PCL050:"C:/Users/V.Chepuri/OneDrive - Cranfield University/irp/pablo/GCI/Medium_mesh/template_medium.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      181070 cells,     4 cell zones ...
+          36824 mixed cells,  zone id: 2
+         108032 mixed cells,  zone id: 4
+          27008 mixed cells,  zone id: 12
+           9206 mixed cells,  zone id: 11
+      309160 faces,    14 face zones ...
+          65137 2D interior faces,  zone id: 3
+         181145 2D interior faces,  zone id: 5
+             42 2D velocity-inlet faces,  zone id: 6
+             38 2D pressure-outlet faces,  zone id: 7
+             40 2D velocity-inlet faces,  zone id: 8
+            458 2D interior faces,  zone id: 9
+            456 2D interior faces,  zone id: 10
+            228 2D parent-face faces,  zone id: 19
+            229 2D parent-face faces,  zone id: 18
+             20 2D parent-face faces,  zone id: 17
+             19 2D parent-face faces,  zone id: 16
+             21 2D parent-face faces,  zone id: 15
+          45157 2D parent-face faces,  zone id: 14
+          16170 2D parent-face faces,  zone id: 13
+      102461 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	outlet
+	inlet
+	interior-fluid
+	interior-porous
+	symmetry
+	upper
+	lower
+	fluid
+	porous
+WARNING: "Smooth" contours can't be displayed when node-values is set to off. Changing the Coloring type to "Banded".
+     parallel,
+Done.
+(cx-gui-do cx-activate-item "ToolBar*Mesh Display*fl_mesh_svg_graphics_toolbar")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton1(Manual)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("Named Expressions" . 1))
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 102453 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   144856 /     36214 /   -108642)
+     faces (   247316 /     61844 /   -185472)
+     nodes (   102461 /     25631 /    -76830)
+
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+
+(cx-gui-do cx-activate-item "Information*OK")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /     36214 /         0)
+     faces (    61844 /     61844 /         0)
+     nodes (    25631 /     25631 /         0)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton2(Controls)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /     36214 /         0)
+     faces (    61844 /     61844 /         0)
+     nodes (    25631 /     25631 /         0)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /    144856 /    108642)
+     faces (    61844 /    247316 /    185472)
+     nodes (    25631 /    102461 /     76830)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Dump usage: 579424 cells, 989144 faces, 409721 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   144856 /    579424 /    434568)
+     faces (   247316 /    989144 /    741828)
+     nodes (   102461 /    409721 /    307260)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 579424 cells, 989144 faces, 409721 nodes
+
+ Dump usage: 144856 cells, 247316 faces, 409710 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   579424 /    144856 /   -434568)
+     faces (   989144 /    247316 /   -741828)
+     nodes (   409721 /    102461 /   -307260)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 102460 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   144856 /     36214 /   -108642)
+     faces (   247316 /     61844 /   -185472)
+     nodes (   102461 /     25631 /    -76830)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /     36214 /         0)
+     faces (    61844 /     61844 /         0)
+     nodes (    25631 /     25631 /         0)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-use-window-id 51)
+(cxg-clear-all-selections (cx-active-window))
+(cxg-add-surfaces-to-selection '(interior-fluid) (cx-active-window))
+(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")
+(cx-use-window-id 51)
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(dolly-camera -7.20858 14.3205 0)
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton2(Controls)")
+(cx-gui-do cx-set-integer-entry "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)" 1)
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton1(Manual)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton4(Manage)")
+(cx-gui-do cx-activate-item "Manage Adaption Criteria*PanelButtons*PushButton1(Close)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton2(Controls)")
+(cx-gui-do cx-set-integer-entry "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)" 2)
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /    144856 /    108642)
+     faces (    61844 /    247316 /    185472)
+     nodes (    25631 /    102461 /     76830)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton2(Controls)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton2(Controls)")
+(cx-gui-do cx-set-integer-entry "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)" 1)
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 102455 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   144856 /     36214 /   -108642)
+     faces (   247316 /     61844 /   -185472)
+     nodes (   102461 /     25631 /    -76830)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table2*Table1*PushButton5(General Adaption Controls)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /     36214 /         0)
+     faces (    61844 /     61844 /         0)
+     nodes (    25631 /     25631 /         0)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table2*Table1*PushButton5(General Adaption Controls)")
+(cx-gui-do cx-set-integer-entry "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)" 2)
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 36214 cells, 61844 faces, 25631 nodes
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    36214 /    144856 /    108642)
+     faces (    61844 /    247316 /    185472)
+     nodes (    25631 /    102461 /     76830)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Mesh)*PushButton4(Check)")
+(cx-gui-do cx-activate-item "MenuBar*PopupMenuCheck*Perform Mesh Check")
+
+ Domain Extents:
+   x-coordinate: min (m) = -1.994408e+01, max (m) = 3.000000e+01
+   y-coordinate: min (m) = -2.000000e+01, max (m) = 2.000000e+01
+ Volume statistics:
+   minimum volume (m3): 4.673970e-10
+   maximum volume (m3): 1.072713e+00
+     total volume (m3): 1.825978e+03
+ Face area statistics:
+   minimum face area (m2): 2.886305e-05
+   maximum face area (m2): 1.838148e+00
+ Checking mesh............................
+Done.
+ (cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Mesh)*PushButton5(  Quality)")
+(cx-gui-do cx-activate-item "MenuBar*PopupMenuQuality*Evaluate Mesh Quality")
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  4.14051e-01 cell 34997 on zone 2 (ID: 34998 on partition: 0) at location ( 9.93214e-01, -2.58283e-05)
+
+
+Maximum Aspect Ratio =  1.06255e+02 cell 254 on zone 4 (ID: 37079 on partition: 0) at location ( 4.68650e-01, -5.48732e-02)
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton4(Display)")
+(cxg-clear-all-selections (cx-active-window))
+(cxg-add-surfaces-to-selection '() (cx-active-window))
+(cx-gui-do cx-activate-item "Question*OK")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table2*Table1*PushButton5(General Adaption Controls)")
+(cx-gui-do cx-set-toggle-button2 "General Adaption Controls*Table1*Table2*CheckButton1(Show Advanced Controls)" #t)
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table2*CheckButton1(Show Advanced Controls)")
+(cx-gui-do cx-set-integer-entry "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)" 1)
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table1*IntegerEntry1(Maximum Refinement Level)")
+(cx-gui-do cx-set-list-selections "General Adaption Controls*Table1*Table2*Table3*List1(Zones)" '( 0))
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table2*Table3*List1(Zones)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 144856 cells, 247316 faces, 102461 nodes
+
+ Dump usage: 62461 cells, 108526 faces, 102455 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (   144856 /     62461 /    -82395)
+     faces (   247316 /    108526 /   -138790)
+     nodes (   102461 /     46066 /    -56395)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton2(Close)")
+(cx-gui-do cx-activate-item "MenuBar*WriteSubMenu*Case...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "C:/Users/V.Chepuri/OneDrive - Cranfield University/irp/pablo/GCI/coarse/template_medium.cas.h5") "CFF Case Files (*.cas.h5 )")
+
+Writing to 37PCL050:"C:/Users/V.Chepuri/OneDrive - Cranfield University/irp/pablo/GCI/coarse/template_medium.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+       71210 cells,     3 zones ...
+      124239 faces,     8 zones ...
+       46066 nodes,     1 zone  ...
+  Done.
+Done.
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Adapt)*Table1*PushButton1(Manual)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)" '("" . 4))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry2(Coarsening Criterion)")
+(cx-gui-do cx-set-expression-entry "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)" '("region_0" . 5))
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table1*Table1*ExpressionEntry1(Refinement Criterion)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton1(Apply)")
+
+ Dump usage: 62461 cells, 108526 faces, 46066 nodes
+
+ Dump usage: 143485 cells, 245031 faces, 101547 nodes
+
+ Grid size ( original /   adapted /    change)
+     cells (    62461 /    143485 /     81024)
+     faces (   108526 /    245031 /    136505)
+     nodes (    46066 /    101547 /     55481)
+Info: The hanging node adaption method will not be available for 2D cases in a future release of Fluent. The PUMA 2.5D adaption method can be used instead. To use PUMA 2.5D, convert the 2D mesh to a 3D mesh with a thickness of one cell layer, and enter the following text command:
+mesh/adapt/set/method puma-2.5d
+Support for the hanging node method is extended to the current release, in order to provide time for you to migrate your cases to the PUMA method.
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*Table1*Table2*Table1*PushButton5(General Adaption Controls)")
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table2*Table3*List1(Zones)")
+(cx-gui-do cx-set-list-selections "General Adaption Controls*Table1*Table2*Table3*List1(Zones)" '( 0 1))
+(cx-gui-do cx-activate-item "General Adaption Controls*Table1*Table2*Table3*List1(Zones)")
+(cx-gui-do cx-activate-item "General Adaption Controls*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Manual Mesh Adaption*PanelButtons*PushButton2(Close)")
+(cx-gui-do cx-activate-item "MenuBar*WriteSubMenu*Case...")
+/exit y
+(cx-gui-do cx-activate-item "Question*OK")
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  15:42:10, 13 Aug 2025 GMT Summer Time 
+Total Transcript Time: 12 Minute 13 Second.
