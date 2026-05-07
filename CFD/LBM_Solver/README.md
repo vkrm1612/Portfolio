@@ -2,10 +2,9 @@
 # Lattice Boltzmann Fluid Simulation
 
 
-![LBM Simulation Animation](vortex_street.gif)
+![LBM Simulation Animation](result.gif)
 
 
-## Overview
 The script simulates fluid flow through a rectangular channel containing a cylindrical obstacle. It captures the transition from steady flow to a **Von Kármán vortex street**, a classic phenomenon in fluid mechanics where alternating vortices are shed from the back of an object.
 
 ## 2. Core Methodology: D2Q9 LBM
