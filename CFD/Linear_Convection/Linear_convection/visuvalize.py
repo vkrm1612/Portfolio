@@ -5,7 +5,7 @@ x_values = []
 u_values = []
 
 
-file = open('resu.txt' , 'r')
+file = open('linear_convection_resu.txt' , 'r')
 
 
 for line in file:
