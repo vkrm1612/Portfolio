@@ -1,7 +1,6 @@
 
 # Lattice Boltzmann Fluid Simulation
 
-This document provides a comprehensive description of the Python implementation of a 2D fluid dynamics simulation using the **Lattice Boltzmann Method (LBM)**.
 
 ![LBM Simulation Animation](vortex_street.gif)
 
