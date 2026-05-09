@@ -3,7 +3,7 @@
 
 Fortran program, which solves the **2D Linear Convection Equation** using a finite difference method.
 
-![Simulation Result](/Figure_1.png)
+![Simulation Result](2-D_Linear_convection/Figure_1.png)
 
 ## 1. Overview
 The program simulates the transport of a scalar quantity $u$ (such as temperature or concentration) as it is moved by a constant velocity field $(c, c)$ in a two-dimensional space.
