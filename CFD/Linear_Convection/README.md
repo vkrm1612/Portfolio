@@ -1,9 +1,9 @@
 
-# 2D Linear Convection Simulation (Fortran)
+# 2D Linear Convection Simulation (Fortran + PINN)
 
-Fortran program, which solves the **2D Linear Convection Equation** using a finite difference method.
+Two independent solvers for the **2D Linear Convection Equation**: a Fortran finite-difference method (FDM), and a PyTorch Physics-Informed Neural Network (PINN) that learns the same PDE.
 
-![Simulation Result](2-D_Linear_convection/Figure_1.png)
+![FDM vs PINN](2-D_Linear_convection/fdm_vs_pinn_3d.png)
 
 ## 1. Overview
 The program simulates the transport of a scalar quantity $u$ (such as temperature or concentration) as it is moved by a constant velocity field $(c, c)$ in a two-dimensional space.
@@ -44,3 +44,31 @@ $$u_{i,j}^{n+1} = u_{i,j}^n - c \frac{\Delta t}{\Delta x}(u_{i,j}^n - u_{i-1,j}^
 ## 4. Technical Constraints
 - **CFL Condition:** The stability of this simulation depends on the Courant-Friedrichs-Lewy (CFL) condition. With $c=1$, $dt=0.01$, and $dx=0.1$, the Courant number is $0.1$, which is well within the stability limit ($C \le 1$).
 - **Boundary Conditions:** The code implicitly keeps the boundaries at their initial values (Dirichlet conditions), as the loops skip the first and last rows/columns.
+
+---
+
+## 5. Physics-Informed Neural Network (PINN) Approach
+
+As a mesh-free alternative to the finite-difference solver above, `2-D_Linear_convection/PINN_PDE.ipynb` trains a neural network to satisfy the same governing PDE directly, without discretizing the domain into a grid or marching forward in time.
+
+### Network Architecture
+- A fully connected `PINN` network with inputs $(x, y, t)$ and a single output $u(x, y, t)$.
+- Layer sizes: $[3, 64, 64, 64, 1]$ with `tanh` activations, implemented in PyTorch.
+- Trained with the Adam optimizer (`lr = 1e-3`) for 2000 epochs.
+
+### Physics-Informed Loss
+Rather than learning from labeled simulation data, the network is constrained by the PDE residual itself, computed via automatic differentiation:
+$$f := \frac{\partial u}{\partial t} + c_x \frac{\partial u}{\partial x} + c_y \frac{\partial u}{\partial y}$$
+
+The total loss combines two terms:
+- **Initial-condition loss:** MSE between the network's prediction and the prescribed $u(x, y, 0)$ at 1,000 randomly sampled points.
+- **PDE residual loss:** MSE of $f$ evaluated at 10,000 collocation points sampled across the domain $x, y \in [0, 2]$, $t \in [0, 0.5]$, driving the residual toward zero everywhere (not just at the sampled points).
+
+### Initial Condition
+The PINN was trained on a smooth Gaussian pulse centered at $(0.5, 0.5)$:
+$$u(x, y, 0) = \exp\left(-\frac{(x-0.5)^2 + (y-0.5)^2}{0.1}\right)$$
+This differs from the Fortran solver's top-hat pulse (Section 2), so the two solutions shown side-by-side above are not a pointwise comparison of the same run — they instead illustrate the same convection physics ($c_x = c_y = 1.0$) solved by two fundamentally different methods. The PINN was additionally validated against the **analytical solution** (the same Gaussian, shifted by $c\,t$), achieving a low RMS error at $t = 0.5$, and cross-checked against a matching upwind FDM run on its own Gaussian IC (see the notebook's final cells).
+
+### Output
+- Predictions are evaluated on an $80 \times 80$ grid at the snapshot time $t = 0.5$ and exported to `2-D_Linear_convection/pinn_2d_convection_results.csv` (`x, y, t, u_pinn`).
+- `2-D_Linear_convection/fdm_vs_pinn_3d.png` renders the Fortran FDM surface and the PINN surface side by side in 3D for visual comparison.
